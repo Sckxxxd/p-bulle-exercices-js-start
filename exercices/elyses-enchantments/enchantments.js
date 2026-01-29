@@ -9,6 +9,7 @@
  * @returns {number} the card
  */
 export function getItem(cards, position) {
+  
   return cards[position];
 }
 
