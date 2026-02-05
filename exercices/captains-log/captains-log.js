@@ -1,28 +1,32 @@
 // @ts-check
 
 /**
- * Generates a random starship registry number.
+ * Génère un numéro d'immatriculation de vaisseau aléatoire.
  *
- * @returns {string} the generated registry number.
+ * @returns {string} Le numéro d'immatriculation généré.
  */
 export function randomShipRegistryNumber() {
-  const number = Math.floor(Math.random() * 9000) + 1000; // 1000 → 9999
+  const min = 1000;
+  const max = 9999;
+  const number = Math.floor(Math.random() * (max - min + 1)) + min;
   return `NCC-${number}`;
 }
 
 /**
- * Generates a random stardate.
+ * Génère une stardate aléatoire.
  *
- * @returns {number} a stardate between 41000 (inclusive) and 42000 (exclusive).
+ * @returns {number} Une stardate entre 41000 (inclus) et 42000 (exclus).
  */
 export function randomStardate() {
-  return 41000 + Math.random() * 1000; // 41000 → 42000
+  const min = 41000;
+  const max = 42000;
+  return min + Math.random() * (max - min);
 }
 
 /**
- * Generates a random planet class.
+ * Génère une classe de planète aléatoire.
  *
- * @returns {string} a one-letter planet class.
+ * @returns {string} Une classe de planète (une lettre).
  */
 export function randomPlanetClass() {
   const classes = ['D', 'H', 'J', 'K', 'L', 'M', 'N', 'R', 'T', 'Y'];
